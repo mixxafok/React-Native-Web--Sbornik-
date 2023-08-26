@@ -7,7 +7,8 @@ import { useNavigate } from 'react-router-dom';
 export default function LoveChtoNePomnit(  ) {
   
   const navigateTo = useNavigate();
- const [isStyle, getIsStyle] = useState(JSON.parse(localStorage.getItem('isssEnabled'))) 
+  const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
+  const slide = JSON.parse(localStorage.getItem('SliderValues'))
   
    return (
      <View style={styles.container}>
@@ -20,7 +21,7 @@ export default function LoveChtoNePomnit(  ) {
        </View>
  
         <ScrollView>
-              <Text style={isStyle ? styles.SongDark : styles.SongLight} >
+                <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
                   <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C                   F                C{'\n'}</Text>
                   Любовь, что не помнит неправды людской,{'\n'}

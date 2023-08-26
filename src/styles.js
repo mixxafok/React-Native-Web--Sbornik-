@@ -20,13 +20,13 @@ export const styles = StyleSheet.create({
    },
    Pesni: {
      fontSize: 18,
-     marginTop: '30px',
+     marginTop: '25px',
      marginLeft: '3%',
    },
    Arrow: {
       width: 30,
       height: 30,
-      marginTop: 30,
+      marginTop: 20,
      marginLeft: '3%',
      zIndex: 10
     },
@@ -34,13 +34,13 @@ export const styles = StyleSheet.create({
       display:'none',
        width: 25,
        height: 25,
-       marginTop: -30,
+       marginTop: -25,
        marginLeft:'86%',
      },
    Menu1: {
      width: 25,
      height: 25,
-     marginTop: -30,
+     marginTop: -25,
      marginLeft:'86%',
    },
    NameSongs: {
@@ -81,7 +81,7 @@ export const styles = StyleSheet.create({
       backgroundColor:'#eeeeee',
       paddingRight: "6%",
       paddingLeft: '2%',
-
+      fontSize: 18,
       fontWeight: 'bold'
     },
     SongDark:{
@@ -90,7 +90,7 @@ export const styles = StyleSheet.create({
       backgroundColor:'#121212',
       paddingRight: "6%",
       paddingLeft: '2%',
-
+      fontSize: 18,
       fontWeight: 'bold'
     },
     Couplet: {
@@ -99,13 +99,15 @@ export const styles = StyleSheet.create({
       fontWeight: 'bold',
     },
     AccordesLight: {
-     
+      fontSize: 16,
+      fontWeight: 'normal',
     },
     AccordesDark: {
       color: '#00dd00',
       fontSize: 18,
       fontWeight: 'normal',
     },
+
     modView: {
       flex: 1/5,
       backgroundColor:'#eeeeee',
@@ -124,13 +126,15 @@ export const styles = StyleSheet.create({
     },
     modSwitch:{
     position: 'absolute',
-    top: "1%",
+    top: "8%",
     right: 15
     },
-    Slider:{
-      top: 60,
-    },
 
+    Slider:{
+      top: 30,
+      width: '96%',
+      marginLeft: '2%' 
+    },
     SliderText: {
       position: 'absolute',
       top: 53,

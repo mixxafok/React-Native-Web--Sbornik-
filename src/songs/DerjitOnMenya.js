@@ -6,8 +6,9 @@ import { useNavigate } from 'react-router-dom';
 
 export default function DerjitOnMenya( ) {
   
-     const navigateTo = useNavigate();
- const [isStyle, getIsStyle] = useState(JSON.parse(localStorage.getItem('isssEnabled'))) 
+  const navigateTo = useNavigate();
+  const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
+  const slide = JSON.parse(localStorage.getItem('SliderValues')) 
 
    return (
      <View style={styles.container}>
@@ -20,7 +21,7 @@ export default function DerjitOnMenya( ) {
        </View>
  
         <ScrollView>
-              <Text style={isStyle ? styles.SongDark : styles.SongLight} >
+              <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
                   <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G       C       D       G{'\n'}</Text>
                   Если грех меня страшит, Держит Он меня!{'\n'}

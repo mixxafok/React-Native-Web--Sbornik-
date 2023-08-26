@@ -7,7 +7,8 @@ import { useNavigate } from 'react-router-dom';
 export default function VTebeGospod(  ) {
   
   const navigateTo = useNavigate();
-  const [isStyle, getIsStyle] = useState(JSON.parse(localStorage.getItem('isssEnabled'))) 
+  const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
+  const slide = JSON.parse(localStorage.getItem('SliderValues'))
   
    return (
      <View style={styles.container}>
@@ -20,7 +21,7 @@ export default function VTebeGospod(  ) {
        </View>
  
         <ScrollView>
-              <Text style={isStyle ? styles.SongDark : styles.SongLight} >
+              <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
                   <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F{'\n'}</Text>
                   В тебе, Господь вся жизнь моя {'\n'}

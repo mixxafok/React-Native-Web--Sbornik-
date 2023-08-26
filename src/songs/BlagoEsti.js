@@ -9,7 +9,7 @@ export default function BlagoEsti() {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
   const slide = JSON.parse(localStorage.getItem('SliderValues'))
-  console.log(slide)
+
    return (
      <View style={styles.container}>
  

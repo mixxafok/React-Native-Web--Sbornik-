@@ -14,8 +14,8 @@ export default function NameSongs() {
   const navigateTo = useNavigate();
 
 const [storage, setStorage] = useState({
-  sliderValue:   JSON.parse(localStorage.getItem('SliderValues')) || 18,
-  switchValue:  JSON.parse(localStorage.getItem('isssEnabled'))
+  sliderValue: /*localStorage.getItem('SliderValues') ||*/ 18,
+  switchValue: AsyncStorage.getItem('isssEnabled') || true
 })
 
 
@@ -31,56 +31,56 @@ const [storage, setStorage] = useState({
   //   SaveSlider(valuse);
   // }
 
-  const GetSwitch = async () => {
+  const GetSwitch =  () => {
    try{
-     let EnabledSwitch = await localStorage.getItem('isssEnabled');
+     let EnabledSwitch =  AsyncStorage.getItem('isssEnabled');
      if (JSON.parse(EnabledSwitch) === true){
-     await setStorage({...storage, switchValue: true});
-     await SaveSwitch(true);
-       console.log(storage)
+      setStorage({...storage, switchValue: true});
+      SaveSwitch(true);
+      // console.log(storage)
      }
      if (JSON.parse(EnabledSwitch) === false){
-    await  setStorage({...storage, switchValue: false});
-    await  SaveSwitch(false);
-      console.log(storage)
+      setStorage({...storage, switchValue: false});
+      SaveSwitch(false);
+      //console.log(storage)
     }
    }catch (e){
-      console.log("Error get SWITCH");
+      //console.log("Error get SWITCH");
    }
  }
  
- const SaveSwitch = async (a) => {
+ const SaveSwitch =  (a) => {
   try{
-    
-     await localStorage.setItem('isssEnabled', JSON.stringify(a));
-     console.log(JSON.stringify(storage))
+      AsyncStorage.setItem('isssEnabled', JSON.stringify(a));
+    // console.log(JSON.stringify(storage))
   }catch (e){
-     console.log("Error save SWITCH");
+    // console.log("Error save SWITCH");
   }
 }
 
-const GetSlider = async () => {
+const GetSlider =  () => {
   try{
-    let ValueSlider = await localStorage.getItem('SliderValues');
-    if (JSON.parse(ValueSlider) == false){
+    let ValueSlider =  AsyncStorage.getItem('SliderValues');
+    if (JSON.parse(ValueSlider) == ''){
       console.log('ValueLides = false')
     }
-    if (JSON.parse(ValueSlider) == true){
-     await setStorage({...storage, sliderValue: ValueSlider});
-      console.log(ValueSlider)
+    if (JSON.parse(ValueSlider) != ''){
+      setStorage({...storage, sliderValue: ValueSlider});
+     // console.log(ValueSlider)
    }
   }catch (e){
-     console.log("Error get SLIDER");
+     //console.log("Error get SLIDER");
   }
+
 }
 
-const SaveSlider = async (b) => {
+const SaveSlider = (b) => {
   setStorage({...storage, sliderValue: b});
  try{
-    await localStorage.setItem('SliderValues', JSON.stringify(b));
-    console.log(JSON.stringify(storage))
+     AsyncStorage.setItem('SliderValues', JSON.stringify(b));
+    //console.log(JSON.stringify(storage))
  }catch (e){
-    console.log("Error save SLIDER ");
+    //console.log("Error save SLIDER ");
  }
 }
 
@@ -150,7 +150,7 @@ const songss = ListSongs.sort((a,b)=>{return a.title.localeCompare(b.title)}).ma
     <View style={storage.switchValue ? styles.containerDark : styles.container}>
 
       <View style={styles.header}>
-        <Text style={styles.Pesni}>Песни</Text>
+        <Text style={styles.Pesni}>Молодежный сборник</Text>
         <TouchableWithoutFeedback style={styles.button}  onPress={() => setModalOpen(!modalOpen)}>
           <Image source={require('./assets/menu.png')} style={styles.Menu1}/>     
         </TouchableWithoutFeedback>
