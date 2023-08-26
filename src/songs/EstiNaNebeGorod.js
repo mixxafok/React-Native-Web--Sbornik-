@@ -1,40 +1,44 @@
-import React from 'react';
+import React, { useState} from 'react';
  
  import { Text, View, ScrollView, Image, TouchableWithoutFeedback, StatusBar} from 'react-native';
 import { styles } from '../styles';
+import { useNavigate } from 'react-router-dom';
 
-export default function EstiNaNebeGorod({navigation}) {
+export default function EstiNaNebeGorod(  ) {
   
+  const navigateTo = useNavigate();
+ const [isStyle, getIsStyle] = useState(JSON.parse(localStorage.getItem('isssEnabled'))) 
+
    return (
      <View style={styles.container}>
  
        <View style={styles.header}>
-          <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+          <TouchableWithoutFeedback onPress={() =>   navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
          <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
        </View>
  
         <ScrollView>
-              <Text style={styles.Song} >
+              <Text style={isStyle ? styles.SongDark : styles.SongLight} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={styles.Accordes}>Am       Dm    E       Am {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am       Dm    E       Am {'\n'}</Text>
                   Есть на небе город, чудный город света,{'\n'}
-                  <Text style={styles.Accordes}>F    G       C {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F    G       C {'\n'}</Text>
                   Там нужды болезни и печали нету.{'\n'}
-                  <Text style={styles.Accordes}>Am       Dm   G       C {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am       Dm   G       C {'\n'}</Text>
                   Там Живут святые, там играют гусли, {'\n'}
-                  <Text style={styles.Accordes}>Am        E {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am        E {'\n'}</Text>
                   Воспевая славу Господу Иисусу.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={styles.Accordes}>Am       Dm {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am       Dm {'\n'}</Text>
                   Болезни там нет, не гаснет там свет, Иерусалим.{'\n'}
-                  <Text style={styles.Accordes}>G       C       E{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G       C       E{'\n'}</Text>
                   Там вечно живут, там песни поют, Иерусалим.{'\n'}
-                  <Text style={styles.Accordes}>Am       Dm {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am       Dm {'\n'}</Text>
                   Ты город живых, ты город святых, Иерусалим.{'\n'}
-                  <Text style={styles.Accordes}>Am       E       Am    Dm {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am       E       Am    Dm {'\n'}</Text>
                   К тебе я стремлюсь, с тобой я сольюсь, Иерусалим.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

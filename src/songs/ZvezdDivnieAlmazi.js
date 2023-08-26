@@ -1,46 +1,50 @@
-import React from 'react';
+import React, { useState} from 'react';
  
  import { Text, View, ScrollView, Image, TouchableWithoutFeedback, StatusBar} from 'react-native';
 import { styles } from '../styles';
+import { useNavigate } from 'react-router-dom';
 
-export default function ZvezdDivnieAlmazi({navigation}) {
+export default function ZvezdDivnieAlmazi( isEnabled ) {
   
+     const navigateTo = useNavigate();
+ const [isStyle, getIsStyle] = useState(JSON.parse(localStorage.getItem('isssEnabled'))) 
+
    return (
      <View style={styles.container}>
  
        <View style={styles.header}>
-          <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+          <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
           <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
        </View>
 
         <ScrollView>
-              <Text style={styles.Song} >
-                  <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={styles.Accordes}>  Hm  {'\n'}</Text>
+              <Text  style={isStyle ? styles.SongDark : styles.SongLight} >
+                  <Text style={styles.Couplet } >Куплет 1: {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>  Hm  {'\n'}</Text>
                   Что этот свет? Он - созданье Всевышнего, {'\n'}
-                  <Text style={styles.Accordes}>  G      {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>  G      {'\n'}</Text>
                   Воля и Разум Творца. {'\n'}
-                  <Text style={styles.Accordes}>  D                        A {'\n'}</Text>               
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>  D                        A {'\n'}</Text>               
                   Это ль не есть выражение Божьей любви?  {'\n'}
-                  <Text style={styles.Accordes}>   H {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>   H {'\n'}</Text>
                   Горы, равнины и дали лесистые, {'\n'}
-                  <Text style={styles.Accordes}>  G{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>  G{'\n'}</Text>
                   Скалы, овраги и травы душистые, {'\n'}
-                  <Text style={styles.Accordes}>  Em     {'\n'}</Text>               
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>  Em     {'\n'}</Text>               
                   Утра румянец и ночи мерцание - {'\n'}
-                  <Text style={styles.Accordes}>  A                 F#   {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>  A                 F#   {'\n'}</Text>
                   Бога создание, Бога дыхание. {'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={styles.Accordes}>  Hm        G        D           F#   {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>  Hm        G        D           F#   {'\n'}</Text>
                   Звёзд дивные алмазы на чёрный бархат неба {'\n'}
-                  <Text style={styles.Accordes}>  Hm        G        D           F#{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>  Hm        G        D           F#{'\n'}</Text>
                   Ты поместил Своей рукой, поместил Своей рукой.{'\n'}
-                  <Text style={styles.Accordes}>  Hm        G        D           F#{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>  Hm        G        D           F#{'\n'}</Text>
                   Нет, я ещё ни разу столь к Тебе близок не был.{'\n'}
-                  <Text style={styles.Accordes}>  Hm        G        D           F#          Hm{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>  Hm        G        D           F#          Hm{'\n'}</Text>
                   Ты подарил душе покой, подарил душе покой.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

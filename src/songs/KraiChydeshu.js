@@ -1,38 +1,42 @@
-import React from 'react';
+import React, { useState} from 'react';
  
  import { Text, View, ScrollView, Image, TouchableWithoutFeedback, StatusBar} from 'react-native';
 import { styles } from '../styles';
+import { useNavigate } from 'react-router-dom';
 
-export default function KraiChydeshu({navigation}) {
+export default function KraiChydeshu(  ) {
   
+     const navigateTo = useNavigate();
+ const [isStyle, getIsStyle] = useState(JSON.parse(localStorage.getItem('isssEnabled'))) 
+
    return (
      <View style={styles.container}>
  
        <View style={styles.header}>
-          <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+          <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
           <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
        </View>
  
         <ScrollView>
-              <Text style={styles.Song} >
+              <Text style={isStyle ? styles.SongDark : styles.SongLight} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={styles.Accordes}>C                                                    F{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C                                                    F{'\n'}</Text>
                   Край чудесный нас ждет там на небе,{'\n'}
-                  <Text style={styles.Accordes}>                          G              C{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>                          G              C{'\n'}</Text>
                   Где окончится труд и печаль!{'\n'}
-                  <Text style={styles.Accordes}>C                                                     F{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C                                                     F{'\n'}</Text>
                   От скорбей я стремлюсь к той Отчизне,{'\n'}
-                  <Text style={styles.Accordes}>F                              G             C {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F                              G             C {'\n'}</Text>
                   Где есть вечная радость и мир.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={styles.Accordes}>F{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F{'\n'}</Text>
                   Край чудесный!{'\n'}
-                  <Text style={styles.Accordes}>             C{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>             C{'\n'}</Text>
                   Край чудесный!{'\n'}
-                  <Text style={styles.Accordes}>             G                              C{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>             G                              C{'\n'}</Text>
                   Сердце радостно рвется к тебе.{'\n'}
                   Край чудесный! {'\n'}
                   Край чудесный!{'\n'}

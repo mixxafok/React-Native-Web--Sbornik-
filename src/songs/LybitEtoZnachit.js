@@ -1,30 +1,34 @@
-import React from 'react';
+import React, { useState} from 'react';
  
  import { Text, View, ScrollView, Image, TouchableWithoutFeedback, StatusBar} from 'react-native';
 import { styles } from '../styles';
+import { useNavigate } from 'react-router-dom';
 
-export default function LybitEtoZnachit({navigation}) {
+export default function LybitEtoZnachit(  ) {
+  
+  const navigateTo = useNavigate();
+ const [isStyle, getIsStyle] = useState(JSON.parse(localStorage.getItem('isssEnabled'))) 
   
    return (
      <View style={styles.container}>
  
        <View style={styles.header}>
-          <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+          <TouchableWithoutFeedback onPress={() =>   navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
          <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
        </View>
  
         <ScrollView>
-              <Text style={styles.Song} >
+              <Text style={isStyle ? styles.SongDark : styles.SongLight} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={styles.Accordes}>D           E           G           D{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D           E           G           D{'\n'}</Text>
                   Любить - это значит жить радостью друга,{'\n'}
-                  <Text style={styles.Accordes}>E           A7           D{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>E           A7           D{'\n'}</Text>
                   Страдать его горем, себя забывать,{'\n'}
-                  <Text style={styles.Accordes}>D           G           C           F{'\n'}</Text>               
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D           G           C           F{'\n'}</Text>               
                   В тяжелую пору скорбей и недуга {'\n'}
-                  <Text style={styles.Accordes}>G           G           A7{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G           G           A7{'\n'}</Text>
                   Ему бескорыстно свой труд отдавать.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

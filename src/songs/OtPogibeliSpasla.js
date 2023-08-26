@@ -1,30 +1,34 @@
-import React from 'react';
+import React, { useState} from 'react';
  
  import { Text, View, ScrollView, Image, TouchableWithoutFeedback, StatusBar} from 'react-native';
 import { styles } from '../styles';
+import { useNavigate } from 'react-router-dom';
 
-export default function OtPogibeliSpasla({navigation}) {
+export default function OtPogibeliSpasla(  ) {
   
+     const navigateTo = useNavigate();
+ const [isStyle, getIsStyle] = useState(JSON.parse(localStorage.getItem('isssEnabled'))) 
+
    return (
      <View style={styles.container}>
  
        <View style={styles.header}>
-          <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+          <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
           <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
        </View>
 
         <ScrollView>
-              <Text style={styles.Song} >
+              <Text style={isStyle ? styles.SongDark : styles.SongLight} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={styles.Accordes}>Dm                           Gm{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm                           Gm{'\n'}</Text>
                   От погибели спасла меня Милость Божия,{'\n'}
-                  <Text style={styles.Accordes}>C  A                         Dm{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C  A                         Dm{'\n'}</Text>
                   В дне отчаянья нашла меня Милость Божия.{'\n'}
-                  <Text style={styles.Accordes}>Cm                                        D{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Cm                                        D{'\n'}</Text>
                   То, что я ещё живу, то, что Господу служу,{'\n'}
-                  <Text style={styles.Accordes}>Gm     A                              Dm{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Gm     A                              Dm{'\n'}</Text>
                   Это милость Божия, это милость Божия.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

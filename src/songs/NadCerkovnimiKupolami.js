@@ -1,40 +1,44 @@
-import React from 'react';
+import React, { useState} from 'react';
  
  import { Text, View, ScrollView, Image, TouchableWithoutFeedback, StatusBar} from 'react-native';
 import { styles } from '../styles';
+import { useNavigate } from 'react-router-dom';
 
-export default function NadCerkovnimiKupolami({navigation}) {
+export default function NadCerkovnimiKupolami(  ) {
   
+     const navigateTo = useNavigate();
+ const [isStyle, getIsStyle] = useState(JSON.parse(localStorage.getItem('isssEnabled'))) 
+
    return (
      <View style={styles.container}>
  
        <View style={styles.header}>
-          <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+          <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
           <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
        </View>
  
         <ScrollView>
-              <Text style={styles.Song} >
+              <Text style={isStyle ? styles.SongDark : styles.SongLight} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={styles.Accordes}>Am                    Dm{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am                    Dm{'\n'}</Text>
                   Над церковными куполами {'\n'}
-                  <Text style={styles.Accordes}>E                        Am{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>E                        Am{'\n'}</Text>
                   Небо синее-синее.{'\n'}
-                  <Text style={styles.Accordes}>C      {'\n'}</Text>               
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C      {'\n'}</Text>               
                   Я иду, под моими ногами  {'\n'}
-                  <Text style={styles.Accordes}>Dm                                E{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm                                E{'\n'}</Text>
                   Русь пролегла родимая.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={styles.Accordes}>Am                             Dm {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am                             Dm {'\n'}</Text>
                   Тихим светом далёким светится{'\n'}
-                  <Text style={styles.Accordes}>G                                C{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G                                C{'\n'}</Text>
                   Небо, звёздами озарённое,{'\n'}
-                  <Text style={styles.Accordes}>F                       Dm {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F                       Dm {'\n'}</Text>
                   И легко душе моей верится{'\n'}
-                  <Text style={styles.Accordes}>F                  E         Am {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F                  E         Am {'\n'}</Text>
                   В вечный рай, где живут спасённые.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

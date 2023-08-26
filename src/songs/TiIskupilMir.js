@@ -1,30 +1,34 @@
-import React from 'react';
+import React, { useState} from 'react';
  
  import { Text, View, ScrollView, Image, TouchableWithoutFeedback, StatusBar} from 'react-native';
 import { styles } from '../styles';
+import { useNavigate } from 'react-router-dom';
 
-export default function TiIskupilMir({navigation}) {
+export default function TiIskupilMir(  ) {
   
+     const navigateTo = useNavigate();
+ const [isStyle, getIsStyle] = useState(JSON.parse(localStorage.getItem('isssEnabled'))) 
+
    return (
      <View style={styles.container}>
  
        <View style={styles.header}>
-          <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+          <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
           <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
        </View>
 
         <ScrollView>
-              <Text style={styles.Song} >
+              <Text style={isStyle ? styles.SongDark : styles.SongLight} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={styles.Accordes}>G      D      Em{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G      D      Em{'\n'}</Text>
                   Ты искупил мир от греха,{'\n'}
-                  <Text style={styles.Accordes}>Em     C{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em     C{'\n'}</Text>
                   Ты дал ему любовь и свет,{'\n'}
-                  <Text style={styles.Accordes}>C      Am{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C      Am{'\n'}</Text>
                   Зажёг потухшие сердца{'\n'}
-                  <Text style={styles.Accordes}>Am     D{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am     D{'\n'}</Text>
                   и дал надежду.{'\n'}
                   Мы пред Тобою предстоим {'\n'}
                   и каждый дорог для Тебя,{'\n'}
@@ -32,13 +36,13 @@ export default function TiIskupilMir({navigation}) {
                   и превозносим.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={styles.Accordes}>G     D{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G     D{'\n'}</Text>
                   Слава Тебе и величье, {'\n'}
-                  <Text style={styles.Accordes}>Em     D{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em     D{'\n'}</Text>
                   слава в веках и народах,{'\n'}
-                  <Text style={styles.Accordes}>C     G{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C     G{'\n'}</Text>
                   Сила Твоя безгранична,{'\n'}
-                  <Text style={styles.Accordes}>Am     D  (G){'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am     D  (G){'\n'}</Text>
                   Милость Твоя во все роды.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

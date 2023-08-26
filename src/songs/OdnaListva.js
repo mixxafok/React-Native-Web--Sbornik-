@@ -1,34 +1,38 @@
-import React from 'react';
+import React, { useState} from 'react';
  
  import { Text, View, ScrollView, Image, TouchableWithoutFeedback, StatusBar} from 'react-native';
 import { styles } from '../styles';
+import { useNavigate } from 'react-router-dom';
 
-export default function OdnaListva({navigation}) {
+export default function OdnaListva(  ) {
   
+     const navigateTo = useNavigate();
+ const [isStyle, getIsStyle] = useState(JSON.parse(localStorage.getItem('isssEnabled'))) 
+
    return (
      <View style={styles.container}>
  
        <View style={styles.header}>
-          <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+          <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
           <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
        </View>
  
         <ScrollView>
-              <Text style={styles.Song} >
+              <Text style={isStyle ? styles.SongDark : styles.SongLight} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={styles.Accordes}>Аm         Dm          Am{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Аm         Dm          Am{'\n'}</Text>
                   Одна листва, одна листва{'\n'}
-                  <Text style={styles.Accordes}>Dm       E          Am{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm       E          Am{'\n'}</Text>
                   От всех твоих трудов.{'\n'}
-                  <Text style={styles.Accordes}>Dm                 G{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm                 G{'\n'}</Text>
                   Где плод посева твоего?{'\n'}
-                  <Text style={styles.Accordes}>C                Am{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C                Am{'\n'}</Text>
                   Спаситель ждет его давно.{'\n'}
-                  <Text style={styles.Accordes}>Dm{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm{'\n'}</Text>
                   Ты не принес плода,{'\n'}
-                  <Text style={styles.Accordes}>E                Dm{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>E                Dm{'\n'}</Text>
                   Одна листва…{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

@@ -1,40 +1,44 @@
-import React from 'react';
+import React, { useState} from 'react';
  
  import { Text, View, ScrollView, Image, TouchableWithoutFeedback, StatusBar} from 'react-native';
 import { styles } from '../styles';
+import { useNavigate } from 'react-router-dom';
 
-export default function LybitJesusMenya({navigation}) {
+export default function LybitJesusMenya(  ) {
+  
+  const navigateTo = useNavigate();
+ const [isStyle, getIsStyle] = useState(JSON.parse(localStorage.getItem('isssEnabled'))) 
   
    return (
      <View style={styles.container}>
  
        <View style={styles.header}>
-          <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+          <TouchableWithoutFeedback onPress={() =>   navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
          <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
        </View>
  
         <ScrollView>
-              <Text style={styles.Song} >
+              <Text style={isStyle ? styles.SongDark : styles.SongLight} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={styles.Accordes}>D               Em{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D               Em{'\n'}</Text>
                   Любит Иисус меня, любит меня,{'\n'}
-                  <Text style={styles.Accordes}>A               D{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>A               D{'\n'}</Text>
                   Песня об этом пусть будет моя.{'\n'}
-                  <Text style={styles.Accordes}>D                  Em{'\n'}</Text>               
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D                  Em{'\n'}</Text>               
                   И не скрываю я, пусть знают все: {'\n'}
-                  <Text style={styles.Accordes}>A           D       D7{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>A           D       D7{'\n'}</Text>
                   Любит Иисус меня, Его люблю я!{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={styles.Accordes}>Em              A{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em              A{'\n'}</Text>
                   Он любит меня, Его люблю я,{'\n'}
-                  <Text style={styles.Accordes}>D              Hm{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D              Hm{'\n'}</Text>
                   Чудесная дружба с Ним у меня.{'\n'}
-                  <Text style={styles.Accordes}>Em                A{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em                A{'\n'}</Text>
                   Всегда и везде мне с Ним хорошо,{'\n'}
-                  <Text style={styles.Accordes}>D        A        D{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D        A        D{'\n'}</Text>
                   Он близок в беде, Он рядом со мной.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

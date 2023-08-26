@@ -15,18 +15,18 @@ export const styles = StyleSheet.create({
   },
    header: {
      width: '100%',
-     height: 80,
+     height: 60,
      backgroundColor: '#098f30',
    },
    Pesni: {
      fontSize: 18,
-     marginTop: '11%',
+     marginTop: '30px',
      marginLeft: '3%',
    },
    Arrow: {
       width: 30,
       height: 30,
-      marginTop: 40,
+      marginTop: 30,
      marginLeft: '3%',
      zIndex: 10
     },
@@ -34,13 +34,13 @@ export const styles = StyleSheet.create({
       display:'none',
        width: 25,
        height: 25,
-       marginTop: -25,
+       marginTop: -30,
        marginLeft:'86%',
      },
    Menu1: {
      width: 25,
      height: 25,
-     marginTop: -25,
+     marginTop: -30,
      marginLeft:'86%',
    },
    NameSongs: {
@@ -81,7 +81,7 @@ export const styles = StyleSheet.create({
       backgroundColor:'#eeeeee',
       paddingRight: "6%",
       paddingLeft: '2%',
-      fontSize: 18,
+
       fontWeight: 'bold'
     },
     SongDark:{
@@ -90,7 +90,7 @@ export const styles = StyleSheet.create({
       backgroundColor:'#121212',
       paddingRight: "6%",
       paddingLeft: '2%',
-      fontSize: 18,
+
       fontWeight: 'bold'
     },
     Couplet: {
@@ -99,8 +99,7 @@ export const styles = StyleSheet.create({
       fontWeight: 'bold',
     },
     AccordesLight: {
-      fontSize: 18,
-      fontWeight: 'normal',
+     
     },
     AccordesDark: {
       color: '#00dd00',
@@ -113,7 +112,6 @@ export const styles = StyleSheet.create({
       marginTop: 40,
       alignSelf: 'flex-end',
       width: "70%",
-      backgroundColor: 'mintcream',
       borderRadius: 5,
       
     },
@@ -139,6 +137,6 @@ export const styles = StyleSheet.create({
       left: "2%",
       color:'#121212',
       fontSize: 18,
-    }
+    },
  })
  

@@ -1,39 +1,45 @@
 import React from 'react';
 import { Text, View, ScrollView, Image, TouchableWithoutFeedback, StatusBar} from 'react-native';
 import { styles } from '../styles';
+import { useNavigate } from 'react-router-dom';
 
-export default function BlagoEsti({navigation}) {
-  
+
+export default function BlagoEsti() {
+
+  const navigateTo = useNavigate();
+  const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
+  const slide = JSON.parse(localStorage.getItem('SliderValues'))
+  console.log(slide)
    return (
      <View style={styles.container}>
  
        <View style={styles.header}>
-          <TouchableWithoutFeedback onPress={() => navigation.goBack()}>
+          <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
           <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
        </View>
  
         <ScrollView>
-              <Text style={styles.Song} >
+              <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={styles.Accordes}>Em       Am {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em       Am {'\n'}</Text>
                   Благо есть славить Господа,{'\n'}
-                  <Text style={styles.Accordes}>H7       Em       H7 {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>H7       Em       H7 {'\n'}</Text>
                   И петь имени Твоему, Всевышний{'\n'}
-                  <Text style={styles.Accordes}>Em       Am {'\n'}</Text>               
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em       Am {'\n'}</Text>               
                   Возвещать утром милость Твою {'\n'}
-                  <Text style={styles.Accordes}>H7        Em {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>H7        Em {'\n'}</Text>
                   И истину Твою вночи{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={styles.Accordes}>E      Am       D {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>E      Am       D {'\n'}</Text>
                   Ты возвеселил душу мою,{'\n'}
-                  <Text style={styles.Accordes}>G      H7       Em {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G      H7       Em {'\n'}</Text>
                   Я Тебе, Господь, хвалу пою!{'\n'}
-                  <Text style={styles.Accordes}>Am       H7 {'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am       H7 {'\n'}</Text>
                   Дела Твои велики, мой Отец,{'\n'}
-                  <Text style={styles.Accordes}>Em       E{'\n'}</Text>
+                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em       E{'\n'}</Text>
                   Ты мой Господь Ты мой Творец{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>
