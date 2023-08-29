@@ -15,8 +15,9 @@ export default function NameSongs() {
 
 const [storage, setStorage] = useState({
   sliderValue: /*localStorage.getItem('SliderValues') ||*/ 18,
-  switchValue: AsyncStorage.getItem('isssEnabled') || true
+  switchValue: AsyncStorage.getItem('isssEnabled') 
 })
+
 
 
   // const [sliderValue, setSliderValue] = useState(AsyncStorage.getItem('storage').slider);
@@ -31,30 +32,32 @@ const [storage, setStorage] = useState({
   //   SaveSlider(valuse);
   // }
 
-  const GetSwitch =  () => {
+  const GetSwitch = async () => {
    try{
-     let EnabledSwitch =  AsyncStorage.getItem('isssEnabled');
-     if (JSON.parse(EnabledSwitch) === true){
+     let EnabledSwitch = await AsyncStorage.getItem('isssEnabled');
+     if (JSON.parse(EnabledSwitch) == true){
       setStorage({...storage, switchValue: true});
       SaveSwitch(true);
-      // console.log(storage)
+      document.body.style.backgroundColor = "#121212"   
+       console.log('storage')
      }
-     if (JSON.parse(EnabledSwitch) === false){
+     if (JSON.parse(EnabledSwitch) == false){
       setStorage({...storage, switchValue: false});
       SaveSwitch(false);
-      //console.log(storage)
+      console.log('storage2')
+      document.body.style.backgroundColor = "#eee"
     }
    }catch (e){
-      //console.log("Error get SWITCH");
+      console.log("Error get SWITCH");
    }
  }
  
  const SaveSwitch =  (a) => {
   try{
       AsyncStorage.setItem('isssEnabled', JSON.stringify(a));
-    // console.log(JSON.stringify(storage))
+     console.log(JSON.stringify(storage))
   }catch (e){
-    // console.log("Error save SWITCH");
+     console.log("Error save SWITCH");
   }
 }
 
@@ -87,6 +90,7 @@ const SaveSlider = (b) => {
 useEffect( ()=>{
    GetSwitch();
    GetSlider();
+
 },[])
 
 
@@ -147,7 +151,7 @@ const songss = ListSongs.sort((a,b)=>{return a.title.localeCompare(b.title)}).ma
   }
 
   return (
-    <View style={storage.switchValue ? styles.containerDark : styles.container}>
+    <View style={storage.switchValue ? styles.containerDark : styles.containerLight}>
 
       <View style={styles.header}>
         <Text style={styles.Pesni}>Молодежный сборник</Text>

@@ -8,7 +8,8 @@ export default function OdnaListva(  ) {
   
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues')) 
+    const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true); 
 
    return (
      <View style={styles.container}>
@@ -17,23 +18,23 @@ export default function OdnaListva(  ) {
           <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
-          <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+          <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
  
         <ScrollView>
               <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Аm         Dm          Am{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Аm         Dm          Am{'\n'}</Text>
                   Одна листва, одна листва{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm       E          Am{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm       E          Am{'\n'}</Text>
                   От всех твоих трудов.{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm                 G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm                 G{'\n'}</Text>
                   Где плод посева твоего?{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C                Am{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C                Am{'\n'}</Text>
                   Спаситель ждет его давно.{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm{'\n'}</Text>
                   Ты не принес плода,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>E                Dm{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>E                Dm{'\n'}</Text>
                   Одна листва…{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

@@ -8,7 +8,8 @@ export default function UnostSvetlya(  ) {
   
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues')) 
+    const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true); 
 
    return (
      <View style={styles.container}>
@@ -17,19 +18,19 @@ export default function UnostSvetlya(  ) {
           <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
-          <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+          <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
 
         <ScrollView>
               <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Hm      D{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Hm      D{'\n'}</Text>
                  Юность светлая, весна ранняя –{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em      A      D{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em      A      D{'\n'}</Text>
                   Мы ее Творцу принесем,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G      Em{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G      Em{'\n'}</Text>
                   Молодые мы в золотые дни{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Hm      F#      Hm{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Hm      F#      Hm{'\n'}</Text>
                   Лишь для Господа живем.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

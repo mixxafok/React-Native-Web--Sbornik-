@@ -8,7 +8,8 @@ export default function VTebeGospod(  ) {
   
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues'))
+    const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true);
   
    return (
      <View style={styles.container}>
@@ -17,37 +18,37 @@ export default function VTebeGospod(  ) {
           <TouchableWithoutFeedback onPress={() =>   navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
-         <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+         <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
  
         <ScrollView>
               <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F{'\n'}</Text>
                   В тебе, Господь вся жизнь моя {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Gm   F{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Gm   F{'\n'}</Text>
                   Поэтому я радуюсь {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Bb   F{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Bb   F{'\n'}</Text>
                   С голгофы чистая струя {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C7   F{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C7   F{'\n'}</Text>
                   Живит мой Дух отрадою {'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm{'\n'}</Text>
                   И я пою Христу пою {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Gm {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Gm {'\n'}</Text>
                   За нас отдал Он жизнь свою {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C{'\n'}</Text>
                   Шатёр любви, любви святой {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F   Dm {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F   Dm {'\n'}</Text>
                   Раздвинул Он над всей землёй {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm{'\n'}</Text>
                   И мёдам каплют облака {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Gm{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Gm{'\n'}</Text>
                   Что держит их Его рука {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C{'\n'}</Text>
                   И солнца свет лучистых глас {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C   F{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C   F{'\n'}</Text>
                   Он любит как детей всех нас {'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

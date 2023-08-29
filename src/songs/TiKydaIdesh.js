@@ -8,7 +8,8 @@ export default function TiKydaIdesh(  ) {
   
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues')) 
+    const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true); 
 
    return (
      <View style={styles.container}>
@@ -17,28 +18,28 @@ export default function TiKydaIdesh(  ) {
           <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
-          <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+          <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
 
         <ScrollView>
               <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}> С{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}> С{'\n'}</Text>
                   "Ты куда идешь, скажи мне,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F         G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F         G{'\n'}</Text>
                   Странник с посохом в руке?" -{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F         G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F         G{'\n'}</Text>
                   "Дивной милостью Господней{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C         G         C{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C         G         C{'\n'}</Text>
                   К лучшей я иду стране.{'\n'}
                   
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F         G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F         G{'\n'}</Text>
                   // Через горы и долины,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C         A{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C         A{'\n'}</Text>
                   Через степи и поля,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F         G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F         G{'\n'}</Text>
                   Чрез леса и чрез равнины{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C         G         C{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C         G         C{'\n'}</Text>
                   Я иду домой, друзья". // 2р.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

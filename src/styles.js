@@ -1,16 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-   container: {
-     flex: 1,
-     backgroundColor: '#eeeeee',
-   },
    containerLight: {
-      flex: 1,
+      flex: 2,
       backgroundColor: '#eeeeee',
     },
    containerDark: {
-    flex: 1,
+    flex: 1/2,
     backgroundColor: '#121212',
   },
    header: {
@@ -28,21 +24,31 @@ export const styles = StyleSheet.create({
       height: 30,
       marginTop: 20,
      marginLeft: '3%',
-     zIndex: 10
     },
-    Menu: {
-      display:'none',
-       width: 25,
-       height: 25,
-       marginTop: -25,
-       marginLeft:'86%',
-     },
    Menu1: {
      width: 25,
      height: 25,
      marginTop: -25,
      marginLeft:'86%',
    },
+   NameSongsDark: {
+    color:'#eeeeee',
+    background: '#121212',
+    flex: 1,
+    paddingTop: 10,
+    alignItems: 'center',
+    height: 50,
+    borderStyle:'solid',
+    borderWidth: 1,
+    borderRightWidth: 0,
+    borderLeftWidth: 0,
+    borderTopWidth: 0,
+    borderColor: 'lightgray',
+    borderRightColor:'#blue',
+    paddingLeft: '3%',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
    NameSongs: {
       color:'#121212',
       background: '#eee',
@@ -57,24 +63,7 @@ export const styles = StyleSheet.create({
       fontSize: 18,
       fontWeight: 'bold',
     },
-    NameSongsDark: {
-      color:'#eeeeee',
-      background: '#121212',
-      flex: 1,
-      paddingTop: 10,
-      alignItems: 'center',
-      height: 50,
-      borderStyle:'solid',
-      borderWidth: 1,
-      borderRightWidth: 0,
-      borderLeftWidth: 0,
-      borderTopWidth: 0,
-      borderColor: 'lightgray',
-      borderRightColor:'#blue',
-      paddingLeft: '3%',
-      fontSize: 18,
-      fontWeight: 'bold',
-    },
+
     SongLight:{
       flex: 1,
       color:'#121212',
@@ -107,7 +96,32 @@ export const styles = StyleSheet.create({
       fontSize: 18,
       fontWeight: 'normal',
     },
-
+    MenuAccordesView:{
+      margin: 0,
+      marginTop: -30,
+      marginLeft:'86%',
+      // textDecorationLine:'underline',
+      borderBottomWidth: 2,
+      borderBottomColor: '#eee',
+      fontWeight: 900,
+      textAlign: 'center',
+      width: 15,
+      color: '#121212',
+      fontSize: 20
+    },
+    MenuAccordesHide:{
+      margin: 0,
+      marginTop: -30,
+      marginLeft:'86%',
+      // textDecorationLine:'underline',
+      borderBottomWidth: 2,
+      borderBottomColor: '#121212',
+      fontWeight: 900,
+      textAlign: 'center',
+      width: 15,
+      color: '#121212',
+      fontSize: 20
+    },
     modView: {
       flex: 1/5,
       backgroundColor:'#eeeeee',

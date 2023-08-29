@@ -8,7 +8,8 @@ export default function OtPogibeliSpasla(  ) {
   
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues')) 
+    const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true); 
 
    return (
      <View style={styles.container}>
@@ -17,19 +18,19 @@ export default function OtPogibeliSpasla(  ) {
           <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
-          <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+          <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
 
         <ScrollView>
               <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm                           Gm{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm                           Gm{'\n'}</Text>
                   От погибели спасла меня Милость Божия,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C  A                         Dm{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C  A                         Dm{'\n'}</Text>
                   В дне отчаянья нашла меня Милость Божия.{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Cm                                        D{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Cm                                        D{'\n'}</Text>
                   То, что я ещё живу, то, что Господу служу,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Gm     A                              Dm{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Gm     A                              Dm{'\n'}</Text>
                   Это милость Божия, это милость Божия.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

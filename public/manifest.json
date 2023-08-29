@@ -3,17 +3,17 @@
   "name": "Сборник песен",
   "icons": [
     {
-      "src": "open-book.ico",
+      "src": "icon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "open-book.png",
+      "src": "splash.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "open-book.png",
+      "src": "splash.png",
       "type": "image/png",
       "sizes": "512x512"
     }

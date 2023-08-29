@@ -1,6 +1,5 @@
-import React, { useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import { View } from 'react-native';
-import { styles } from './styles';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NameSongs from './NameSongs';
 import BlagoEsti  from './songs/BlagoEsti.js';
@@ -53,10 +52,10 @@ import VdoliPoViaDolorossa from "./songs/VdoliPoViaDolorossa.js";
 
 
 export default function App() {
-
+  
   return (
 
-    <View style={styles.container}>
+    <View >
       
       <BrowserRouter>
         <Routes>

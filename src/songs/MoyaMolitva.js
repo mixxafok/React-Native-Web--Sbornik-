@@ -8,7 +8,8 @@ export default function MoyaMolitva(  ) {
   
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues')) 
+    const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true); 
 
    return (
      <View style={styles.container}>
@@ -17,39 +18,39 @@ export default function MoyaMolitva(  ) {
           <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
-          <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+          <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
  
         <ScrollView>
               <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em          D    C {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em          D    C {'\n'}</Text>
                   Моя молитва да струится{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am          Hm    Em {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am          Hm    Em {'\n'}</Text>
                   К Тебе Госопдь, как фимиам{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em          D    C {'\n'}</Text>               
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em          D    C {'\n'}</Text>               
                   Как сердце жаждет, как стремится{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am          Hm          Em {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am          Hm          Em {'\n'}</Text>
                   В священный Твой небесный храм{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G             D {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G             D {'\n'}</Text>
                      Боже, я молюсь за Беларусь, {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em          Hm {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em          Hm {'\n'}</Text>
                       Боже, молю Тебя за людей,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C             D{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C             D{'\n'}</Text>
                       Ты их прости, Ты их спаси,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Hm          Em {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Hm          Em {'\n'}</Text>
                       Милость Свою нам яви,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G             D  {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G             D  {'\n'}</Text>
                       Боже, я знаю, Ты будешь с нами{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em          Hm  {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em          Hm  {'\n'}</Text>
                       В храме Своем под небесами{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C             D {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C             D {'\n'}</Text>
                       Радость и мир Ты даровал,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Hm          Em {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Hm          Em {'\n'}</Text>
                       Жизнь за людей отдал{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C     Am          H7    Em{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C     Am          H7    Em{'\n'}</Text>
                       И в Книгу Жизни нас записал{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

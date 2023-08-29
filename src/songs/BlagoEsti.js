@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, ScrollView, Image, TouchableWithoutFeedback, StatusBar} from 'react-native';
 import { styles } from '../styles';
 import { useNavigate } from 'react-router-dom';
@@ -8,7 +8,8 @@ export default function BlagoEsti() {
 
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues'))
+  const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true);
 
    return (
      <View style={styles.container}>
@@ -17,29 +18,29 @@ export default function BlagoEsti() {
           <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
-          <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+          <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
  
         <ScrollView>
               <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em       Am {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em       Am {'\n'}</Text>
                   Благо есть славить Господа,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>H7       Em       H7 {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>H7       Em       H7 {'\n'}</Text>
                   И петь имени Твоему, Всевышний{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em       Am {'\n'}</Text>               
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em       Am {'\n'}</Text>               
                   Возвещать утром милость Твою {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>H7        Em {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>H7        Em {'\n'}</Text>
                   И истину Твою вночи{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>E      Am       D {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>E      Am       D {'\n'}</Text>
                   Ты возвеселил душу мою,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G      H7       Em {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G      H7       Em {'\n'}</Text>
                   Я Тебе, Господь, хвалу пою!{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am       H7 {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am       H7 {'\n'}</Text>
                   Дела Твои велики, мой Отец,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em       E{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em       E{'\n'}</Text>
                   Ты мой Господь Ты мой Творец{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

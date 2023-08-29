@@ -8,7 +8,8 @@ export default function LoveChtoNePomnit(  ) {
   
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues'))
+    const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true);
   
    return (
      <View style={styles.container}>
@@ -17,19 +18,19 @@ export default function LoveChtoNePomnit(  ) {
          <TouchableWithoutFeedback onPress={() =>   navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
          </TouchableWithoutFeedback>
-         <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+         <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
  
         <ScrollView>
                 <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C                   F                C{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C                   F                C{'\n'}</Text>
                   Любовь, что не помнит неправды людской,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G                   C                F              G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G                   C                F              G{'\n'}</Text>
                   Всё зная, не полнит наш список долгов,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C                                  G                        F{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C                                  G                        F{'\n'}</Text>
                    Бросает их в море без дна, берегов, {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F                                  G                        C{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F                                  G                        C{'\n'}</Text>
                   Ведь милость Господня превыше грехов!{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>
@@ -39,11 +40,11 @@ export default function LoveChtoNePomnit(  ) {
                   Ведь милость Господня превыше грехов.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F    C    G         F          C          G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F    C    G         F          C          G{'\n'}</Text>
                   Славен Бог, ведь милость Его,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F                  C                G            C{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F                  C                G            C{'\n'}</Text>
                    Каждое утро тьму гонит прочь,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F                  C                G            C{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F                  C                G            C{'\n'}</Text>
                    Ведь милость Господня, превыше грехов.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 3: {'\n'}</Text>

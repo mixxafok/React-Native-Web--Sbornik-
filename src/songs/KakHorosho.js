@@ -8,7 +8,8 @@ export default function KakHorosho(  ) {
   
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues'))
+    const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true);
   
    return (
      <View style={styles.container}>
@@ -17,19 +18,19 @@ export default function KakHorosho(  ) {
           <TouchableWithoutFeedback onPress={() =>   navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
-         <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+         <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
  
         <ScrollView>
               <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am          C{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am          C{'\n'}</Text>
                   Как хорошо, что со мною Спаситель,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Gm          Dm          Am/E{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Gm          Dm          Am/E{'\n'}</Text>
                   Вечный Творец, Он так любит меня! {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am          Dm{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am          Dm{'\n'}</Text>
                   В жизни моей Он - мой Друг и Хранитель, {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am          E           Am/E{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am          E           Am/E{'\n'}</Text>
                   Всюду со мной, среди ночи и дня.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

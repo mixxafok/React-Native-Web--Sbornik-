@@ -8,7 +8,8 @@ export default function VChristeOdnom(  ) {
   
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues'))
+    const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true);
   
    return (
      <View style={styles.container}>
@@ -17,27 +18,27 @@ export default function VChristeOdnom(  ) {
           <TouchableWithoutFeedback onPress={() =>   navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
-         <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+         <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
  
         <ScrollView>
               <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G                D         G               A          {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G                D         G               A          {'\n'}</Text>
                   В Христе одном надежда есть,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D           G            A           D{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D           G            A           D{'\n'}</Text>
                   Вся моя жизнь и сила в Нём.{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G                      D              G      A       {'\n'}</Text>               
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G                      D              G      A       {'\n'}</Text>               
                   Он - Камень мой, скала и песнь – {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D                   G                     A             D{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D                   G                     A             D{'\n'}</Text>
                   надежный  спутник в страшный шторм{'\n'}{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G   Hm       A {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G   Hm       A {'\n'}</Text>
                   Как высока любовь Его. {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D                G      Hm     A{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D                G      Hm     A{'\n'}</Text>
                   Как мир глубок, как с Ним легко. {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G                 D                G          A  {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G                 D                G          A  {'\n'}</Text>
                   Мой Утешитель – Всё во всём,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D           G      A               D{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D           G      A               D{'\n'}</Text>
                   Моя опора только в Нём.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

@@ -8,7 +8,8 @@ export default function SonGodNamRojden(  ) {
   
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues')) 
+    const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true); 
 
    return (
      <View style={styles.container}>
@@ -17,31 +18,31 @@ export default function SonGodNamRojden(  ) {
           <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
-          <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+          <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
 
         <ScrollView>
               <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C               F {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C               F {'\n'}</Text>
                   Сын Божий нам рождён, оставив власть и трон,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C               G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C               G{'\n'}</Text>
                   Без славы в мир пришёл, Всесильный Сам.{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C               F{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C               F{'\n'}</Text>
                   Вся силы полнота, вся славы красота{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C               G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C               G{'\n'}</Text>
                   Явились в эту ночь в Младенце нам.{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F               G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F               G{'\n'}</Text>
                   Прийди и посмотри!{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am      F      G       Em{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am      F      G       Em{'\n'}</Text>
                   Христос, Господь, нас грешных спасёт!{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am      F      G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am      F      G{'\n'}</Text>
                   Божий Сын рождён, как мы!{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am      F      G       Am{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am      F      G       Am{'\n'}</Text>
                   Христос, Господь, наш Царь принял плоть:{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm      G      C{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm      G      C{'\n'}</Text>
                   Нам рождён Господь Иисус!{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

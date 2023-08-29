@@ -8,7 +8,8 @@ export default function ProsipausNaZare(  ) {
   
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues')) 
+    const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true); 
 
    return (
      <View style={styles.container}>
@@ -17,27 +18,27 @@ export default function ProsipausNaZare(  ) {
           <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
-          <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+          <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
 
         <ScrollView>
               <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D   G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D   G{'\n'}</Text>
                   Просыпаюсь на заре{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>A   D   A/C#{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>A   D   A/C#{'\n'}</Text>
                   И стремлюсь, мой Бог, к Тебе.{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D  G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D  G{'\n'}</Text>
                   Верю, слышишь Ты меня,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>A   D{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>A   D{'\n'}</Text>
                   Иисус, люблю Тебя.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G   A{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G   A{'\n'}</Text>
                   Я ищу Твои пути{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F#m   Hm{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F#m   Hm{'\n'}</Text>
                   И хочу по ним идти.{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em7   A   D   (A  D){'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em7   A   D   (A  D){'\n'}</Text>
                   Надо мной, Господь, Твоя рука.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

@@ -8,7 +8,8 @@ export default function KakPrekrasno(  ) {
   
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues'))
+    const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true);
   
    return (
      <View style={styles.container}>
@@ -17,37 +18,37 @@ export default function KakPrekrasno(  ) {
           <TouchableWithoutFeedback onPress={() =>   navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
-         <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+         <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
  
         <ScrollView>
               <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am{'\n'}</Text>
                   Как прекрасно все то, что Твое,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm{'\n'}</Text>
                   Мне повсюду Твой слышится голос.{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G7 {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G7 {'\n'}</Text>
                   Ветром в листьях звенит и поет,  {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am {'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am {'\n'}</Text>
                   В сердце шепчет, как зреющий колос.  {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am{'\n'}</Text>
                   Эти горы, покрытые мхом, {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm{'\n'}</Text>
                   Эти волны, покрытые пеной,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F{'\n'}</Text>
                   Этот берег с горячим песком,  {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>E{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>E{'\n'}</Text>
                   Это солнце в бескрайней Вселенной.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am{'\n'}</Text>
                   Боже мой, это - Ты, это - Ты, {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Dm{'\n'}</Text>
                   Я с Тобою повсюду встречаюсь: {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G{'\n'}</Text>
                   Когда рву мимоходом цветы {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am(F)        (E)         E (Am){'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am(F)        (E)         E (Am){'\n'}</Text>
                   И на чей-то поклон отвечаю.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

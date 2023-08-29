@@ -8,7 +8,8 @@ export default function LybitEtoZnachit(  ) {
   
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues'))
+    const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true);
   
    return (
      <View style={styles.container}>
@@ -17,19 +18,19 @@ export default function LybitEtoZnachit(  ) {
           <TouchableWithoutFeedback onPress={() =>   navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
-         <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+         <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
  
         <ScrollView>
               <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D           E           G           D{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D           E           G           D{'\n'}</Text>
                   Любить - это значит жить радостью друга,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>E           A7           D{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>E           A7           D{'\n'}</Text>
                   Страдать его горем, себя забывать,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D           G           C           F{'\n'}</Text>               
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>D           G           C           F{'\n'}</Text>               
                   В тяжелую пору скорбей и недуга {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G           G           A7{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G           G           A7{'\n'}</Text>
                   Ему бескорыстно свой труд отдавать.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>

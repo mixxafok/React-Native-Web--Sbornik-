@@ -8,7 +8,8 @@ export default function TiIskupilMir(  ) {
   
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
-  const slide = JSON.parse(localStorage.getItem('SliderValues')) 
+    const slide = JSON.parse(localStorage.getItem('SliderValues'));
+  const [viewAccordes, setViewAccordes] = useState(true); 
 
    return (
      <View style={styles.container}>
@@ -17,19 +18,19 @@ export default function TiIskupilMir(  ) {
           <TouchableWithoutFeedback onPress={() => navigateTo('/')}>
             <Image  source={require('./../assets/icons8.png')} style={styles.Arrow} />
           </TouchableWithoutFeedback>
-          <Image source={require('./../assets/menu.png')} style={styles.Menu}/>
+          <Text style={viewAccordes ? styles.MenuAccordesView : styles.MenuAccordesHide} onPress={() =>   setViewAccordes(!viewAccordes)} >A</Text>
        </View>
 
         <ScrollView>
               <Text style={isStyle ? [styles.SongDark, {fontSize: slide}] : [styles.SongLight, {fontSize: slide}]} >
                   <Text style={styles.Couplet} >Куплет 1: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G      D      Em{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G      D      Em{'\n'}</Text>
                   Ты искупил мир от греха,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em     C{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em     C{'\n'}</Text>
                   Ты дал ему любовь и свет,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C      Am{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C      Am{'\n'}</Text>
                   Зажёг потухшие сердца{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am     D{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am     D{'\n'}</Text>
                   и дал надежду.{'\n'}
                   Мы пред Тобою предстоим {'\n'}
                   и каждый дорог для Тебя,{'\n'}
@@ -37,13 +38,13 @@ export default function TiIskupilMir(  ) {
                   и превозносим.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G     D{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>G     D{'\n'}</Text>
                   Слава Тебе и величье, {'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em     D{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em     D{'\n'}</Text>
                   слава в веках и народах,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C     G{'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>C     G{'\n'}</Text>
                   Сила Твоя безгранична,{'\n'}
-                  <Text style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am     D  (G){'\n'}</Text>
+                  <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Am     D  (G){'\n'}</Text>
                   Милость Твоя во все роды.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>
