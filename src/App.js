@@ -49,7 +49,7 @@ import HristianinNesiOgon from "./songs/HristianinNesiOgon.js";
 import SkolkoEstiZamanchivih from "./songs/SkolkoEstiZamanchivih.js";
 import TiPrishelVEtotMir from "./songs/TiPrishelVEtotMir.js";
 import VdoliPoViaDolorossa from "./songs/VdoliPoViaDolorossa.js";
-
+import NashaJizniThisGod from './songs/NashaJizniThisGod';
 
 export default function App() {
   
@@ -107,6 +107,7 @@ export default function App() {
           <Route path='SkolkoEstiZamanchivih' element={<SkolkoEstiZamanchivih />} />
           <Route path='TiPrishelVEtotMir' element={<TiPrishelVEtotMir /> } />
           <Route path='VdoliPoViaDolorossa' element={<VdoliPoViaDolorossa />} />
+          <Route path='NashaJizniThisGod' element={<NashaJizniThisGod />} />
 
         </Routes>
       </BrowserRouter>

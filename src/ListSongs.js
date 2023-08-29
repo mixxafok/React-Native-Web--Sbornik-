@@ -186,4 +186,8 @@ export const ListSongs = [{
   id: 47,
   title: 'Вдоль по Виа Долоросса'
 },
+{
+  id: 48,
+  title: 'Наша жизнь - это Бог'
+},
 ]

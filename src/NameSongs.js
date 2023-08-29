@@ -148,6 +148,7 @@ const songss = ListSongs.sort((a,b)=>{return a.title.localeCompare(b.title)}).ma
     if (it==45) navigateTo('/HristianinNesiOgon');
     if (it==46) navigateTo('/UnostSvetlya');
     if (it==47) navigateTo('/VdoliPoViaDolorossa');
+    if (it==48) navigateTo('/NashaJizniThisGod');
   }
 
   return (
