@@ -9,7 +9,8 @@ export default function NaDalekomHolme(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -53,7 +54,7 @@ export default function NaDalekomHolme(  ) {
                   О, Иисус дорогой, у подножья креста {'\n'}
                   Сквозь седые века я увидел Тебя: {'\n'}
                   На пронзённых руках незастывшая кровь, {'\n'}
-                  А в прекрасных глазах Божья к людям любовь.{'\n'}
+                  А в прекрасных глазах Божья к людям любовь.{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

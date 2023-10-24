@@ -10,6 +10,7 @@ export default function VChristeOdnom(  ) {
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
   const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0)
   
    return (
      <View style={styles.container}>

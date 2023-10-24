@@ -9,7 +9,8 @@ export default function TiIskupilMir(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -75,7 +76,7 @@ export default function TiIskupilMir(  ) {
                   К престолу славы прихожу{'\n'}
                   И не стыжусь поднять глаза, {'\n'}
                   Иисус меня от смерти спас{'\n'}
-                  И дал свободу{'\n'}
+                  И дал свободу{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

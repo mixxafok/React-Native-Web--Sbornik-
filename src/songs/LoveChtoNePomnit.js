@@ -10,6 +10,7 @@ export default function LoveChtoNePomnit(  ) {
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
   const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0)
   
    return (
      <View style={styles.container}>
@@ -57,7 +58,7 @@ export default function LoveChtoNePomnit(  ) {
                   Любовь, что не помнит неправды людской, {'\n'}
                   Всё зная, не полнит наш список долгов,{'\n'}
                   Бросает их в море без дна, берегов,{'\n'}
-                  Ведь милость Господня превыше грехов!{'\n'}
+                  Ведь милость Господня превыше грехов!{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

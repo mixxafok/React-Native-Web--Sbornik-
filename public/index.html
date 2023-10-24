@@ -2,16 +2,16 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/icon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/icon-green1.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created Novopoltsk Baptist Church"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/icon.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/icon-green1.png" />
 
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
 
     <title>Christian songs</title>
   </head>
@@ -19,11 +19,12 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script>
-      if('serviceWorker' in navigator) {
+      if( 'serviceWorker' in navigator) {
         window.addEventListener('load', async ()=>{
           navigator.serviceWorker.register('./serviceworker.js')
             .then((reg) => console.log('succes', reg.scope))
             .catch((err) => console.log('fail', err))
+            window.swUpdateReady = true;
           })
       }
     </script>

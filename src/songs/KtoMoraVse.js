@@ -10,6 +10,7 @@ export default function KtoMoraVse(  ) {
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
   const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0)
   
    return (
      <View style={styles.container}>
@@ -53,7 +54,7 @@ export default function KtoMoraVse(  ) {
                   Кто был свят, но взял вину людей? {'\n'}
                   Кто подставил руки для гвоздей? {'\n'}
                   Кто в смиреньи умер на кресте? {'\n'}
-                  Кто воскрес, чтоб грешников спасти? {'\n'}
+                  Кто воскрес, чтоб грешников спасти? {'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

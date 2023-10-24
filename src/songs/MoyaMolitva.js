@@ -9,7 +9,8 @@ export default function MoyaMolitva(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -63,7 +64,7 @@ export default function MoyaMolitva(  ) {
                   Пошли, Господь, нам силу свыше,{'\n'}
                   Людей любить и звать к Тебе.{'\n'}
                   Когда мы молимся, услышь нас,{'\n'}
-                  и Помощь дай Свою с небес.{'\n'}
+                  и Помощь дай Свою с небес.{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

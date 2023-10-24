@@ -9,7 +9,8 @@ export default function NaychiMenya(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -53,7 +54,7 @@ export default function NaychiMenya(  ) {
                   Научи меня жизнь свою прожить,{'\n'}
                   Чтоб в конце услышать её:{'\n'}
                   Добрый верный раб скорее войди,{'\n'}
-                  В радость Господина своего.{'\n'}
+                  В радость Господина своего.{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

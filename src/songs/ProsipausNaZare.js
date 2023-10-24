@@ -9,7 +9,8 @@ export default function ProsipausNaZare(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -45,7 +46,7 @@ export default function ProsipausNaZare(  ) {
                   Вижу все Твои дела,{'\n'}
                   И поёт душа моя,{'\n'}
                   Каждый день к Тебе ведёт;{'\n'}
-                  В сердце праведность живёт.{'\n'}
+                  В сердце праведность живёт.{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

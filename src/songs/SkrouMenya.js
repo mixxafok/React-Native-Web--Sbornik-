@@ -9,7 +9,8 @@ export default function SkrouMenya(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -40,7 +41,7 @@ export default function SkrouMenya(  ) {
 
                   <Text style={styles.Couplet} >Куплет 2: {'\n'}</Text>
                   Найду покой, В Тебе Христос,{'\n'}
-                  Верю я, в могущество Твоё!{'\n'}
+                  Верю я, в могущество Твоё!{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

@@ -9,7 +9,8 @@ export default function TiPrishelVEtotMir(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -42,7 +43,7 @@ export default function TiPrishelVEtotMir(  ) {
 
                   <Text style={styles.Couplet} >Куплет 3: {'\n'}</Text>
                   Без Него жизни нет, лишь одна суета.{'\n'}
-                  Бог даёт нам ответ, Он свершает дела.{'\n'}
+                  Бог даёт нам ответ, Он свершает дела.{'\n'}{'\n'}
               </Text>
         </ScrollView> 
 

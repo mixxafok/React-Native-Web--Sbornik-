@@ -9,7 +9,8 @@ export default function OdnaListva(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -66,7 +67,7 @@ export default function OdnaListva(  ) {
                   Но можно жить с плодом.{'\n'}
                   Я буду жить лишь для Христа,{'\n'}
                   Я буду радостным всегда.{'\n'}
-                  Тогда на небеса приду с плодом.{'\n'}
+                  Тогда на небеса приду с плодом.{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

@@ -9,7 +9,8 @@ export default function MiNygniDrygDrygy(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -27,11 +28,11 @@ export default function MiNygniDrygDrygy(  ) {
                   <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F   C   Dm{'\n'}</Text>
                   Мы нужны друг другу, Бог нас спас не зря,{'\n'}
                   <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Bb   C   F   C{'\n'}</Text>
-                  Чтобы с тобою были мы друзья.{'\n'}
+                  В Иисусе стали мы друзья.{'\n'}
                   <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>F   C   Dm{'\n'}</Text>               
-                  Так давай служить теперь ты мне, а я тебе,{'\n'}
+                  С радостью святою, с песней на устах{'\n'}
                   <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Bb   C   F{'\n'}</Text>
-                  Чтоб Царство Божье было на земле.{'\n'}{'\n'}
+                  Прославим вместе Господа Христа.{'\n'}{'\n'}
 
                   <Text style={styles.Couplet} >Припев: {'\n'}</Text>
                   <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Bb   C   Am   Dm{'\n'}</Text>
@@ -47,7 +48,7 @@ export default function MiNygniDrygDrygy(  ) {
                   Пусть дружнее станет наш семейный круг,{'\n'}
                   С нами рядом самый лучший Друг!{'\n'}
                   И о Нём всем людям поспешим мы рассказать,{'\n'}
-                  Чтоб каждый смог Иисусу другом стать!{'\n'}
+                  Чтоб каждый смог Иисусу другом стать!{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

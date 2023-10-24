@@ -11,18 +11,18 @@ export const styles = StyleSheet.create({
   },
    header: {
      width: '100%',
-     height: 60,
+     height: 55,
      backgroundColor: '#098f30',
    },
    Pesni: {
      fontSize: 18,
-     marginTop: '25px',
+     marginTop: '20px',
      marginLeft: '3%',
    },
    Arrow: {
       width: 30,
       height: 30,
-      marginTop: 20,
+      marginTop: 15,
      marginLeft: '3%',
     },
    Menu1: {
@@ -35,7 +35,8 @@ export const styles = StyleSheet.create({
     color:'#eeeeee',
     background: '#121212',
     flex: 1,
-    paddingTop: 10,
+    paddingTop: 7,
+    paddingBottom: 7,
     alignItems: 'center',
     height: 50,
     borderStyle:'solid',
@@ -53,7 +54,8 @@ export const styles = StyleSheet.create({
       color:'#121212',
       background: '#eee',
       flex: 1,
-      paddingTop: 10,
+      paddingTop: 7,
+      paddingBottom: 7,
       alignItems: 'center',
       height: 50,
       borderStyle:'solid',
@@ -88,7 +90,7 @@ export const styles = StyleSheet.create({
       fontWeight: 'bold',
     },
     AccordesLight: {
-      fontSize: 16,
+      fontSize: 18,
       fontWeight: 'normal',
     },
     AccordesDark: {
@@ -96,9 +98,48 @@ export const styles = StyleSheet.create({
       fontSize: 18,
       fontWeight: 'normal',
     },
-    MenuAccordesView:{
+    ChordsEdit:{
       margin: 0,
       marginTop: -30,
+      marginLeft: '60%',
+      borderBottomWidth: 2,
+      borderBottomColor: '#ccc',
+      fontWeight: 900,
+      textAlign: 'center',
+      color: '#121212',
+      fontSize: 20,
+      width: 65
+    },
+    ChordsEdit1:{
+      margin: 0,
+      fontWeight: 900,
+      textAlign: 'center',
+      color: '#121212',
+      fontSize: 26,
+      padding: 2
+    },
+    // chordsTon:{
+    //   backgroundColor: '#098f30',
+    // },
+    concretSong:{
+      width: '46%',
+      height:'20px',
+      fontSize: 16,
+      marginTop: -25,
+      fontWeight: '600',
+      marginLeft: '17%',
+    },
+    music:{
+      width:'25px',
+       height:'25px',
+       marginTop: -25,
+       marginLeft: '72%',
+       borderBottomWidth: 2,
+      borderBottomColor: '#121212',
+    },
+    MenuAccordesView:{
+      margin: 0,
+      marginTop: -25,
       marginLeft:'86%',
       // textDecorationLine:'underline',
       borderBottomWidth: 2,
@@ -111,7 +152,7 @@ export const styles = StyleSheet.create({
     },
     MenuAccordesHide:{
       margin: 0,
-      marginTop: -30,
+      marginTop: -25,
       marginLeft:'86%',
       // textDecorationLine:'underline',
       borderBottomWidth: 2,
@@ -122,6 +163,18 @@ export const styles = StyleSheet.create({
       color: '#121212',
       fontSize: 20
     },
+    modViewChords: {
+      position:'absolute',
+      backgroundColor:'#eeeeee',
+      height: 30,
+      width: '30%',
+      zIndex:'200',
+      alignSelf: 'flex-end',
+      marginTop: 45,
+      marginRight: 80,
+      justifyContent:'center',
+      borderRadius: 5,
+    },
     modView: {
       flex: 1/5,
       backgroundColor:'#eeeeee',
@@ -129,7 +182,6 @@ export const styles = StyleSheet.create({
       alignSelf: 'flex-end',
       width: "70%",
       borderRadius: 5,
-      
     },
     modText: {
       color:'#121212',

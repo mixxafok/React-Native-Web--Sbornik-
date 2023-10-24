@@ -10,6 +10,7 @@ export default function VdoliPoViaDolorossa(  ) {
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
   const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0)
   
    return (
      <View style={styles.container}>
@@ -71,7 +72,7 @@ export default function VdoliPoViaDolorossa(  ) {
                   <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>      Am                  H                   Em          H   Em{'\n'}</Text>
                   Но Он выбрал ту дорогу, чтоб открыть нам небеса,{'\n'}
                   <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em                           D           C     H   Em{'\n'}</Text>               
-                  Шёл Христос по Долороса за меня и за тебя.{'\n'}
+                  Шёл Христос по Долороса за меня и за тебя.{'\n'}{'\n'}
               </Text>
         </ScrollView> 
 

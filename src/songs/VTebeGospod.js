@@ -10,6 +10,7 @@ export default function VTebeGospod(  ) {
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
   const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0)
   
    return (
      <View style={styles.container}>
@@ -61,7 +62,7 @@ export default function VTebeGospod(  ) {
                   Перед Творцом ничтожный я {'\n'}
                   В грехах, повинен смерти был {'\n'}
                   Но кров невинная Христа {'\n'}
-                  Дала мне радость, жизнь и мир{'\n'}
+                  Дала мне радость, жизнь и мир{'\n'}{'\n'}
               </Text>
         </ScrollView> 
 

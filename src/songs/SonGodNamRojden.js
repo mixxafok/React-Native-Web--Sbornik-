@@ -9,7 +9,8 @@ export default function SonGodNamRojden(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -50,7 +51,7 @@ export default function SonGodNamRojden(  ) {
                   Рождён, чтоб искупить позорный грех.{'\n'}
                   В хлеву Он мирно спит, но Он соединит{'\n'}
                   Святого Бога и спасённых всех.{'\n'}
-                  Прийди и поклонись!{'\n'}
+                  Прийди и поклонись!{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

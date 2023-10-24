@@ -9,7 +9,8 @@ export default function SkolkoEstiZamanchivih(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -58,7 +59,7 @@ export default function SkolkoEstiZamanchivih(  ) {
                   Так веди ж меня Своей тропой,{'\n'}
                   Напояй живительной водой.{'\n'}
                   Дай мне силы лишь Тобою жить,{'\n'}
-                  Жаждущих водой Твоей поить.{'\n'}
+                  Жаждущих водой Твоей поить.{'\n'}{'\n'}
               </Text>
         </ScrollView> 
 

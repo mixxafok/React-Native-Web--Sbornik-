@@ -9,7 +9,8 @@ export default function OtPogibeliSpasla(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -55,7 +56,7 @@ export default function OtPogibeliSpasla(  ) {
                   От погибели спасла меня Милость Божия,{'\n'}
                   В день отчаянья нашла меня Милость Божия.{'\n'}
                   То, что я ещё живу, то, что Господу служу,{'\n'}
-                  Это милость Божия, Это милость Божия.{'\n'}
+                  Это милость Божия, Это милость Божия.{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

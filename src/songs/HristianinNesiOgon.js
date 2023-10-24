@@ -9,7 +9,8 @@ export default function HristianinNesiOgon(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -59,7 +60,7 @@ export default function HristianinNesiOgon(  ) {
                   И если станет очень тяжело тебе,{'\n'}
                   Суровый мир сдует огонь,{'\n'}
                   Не унывай, ведь любящий Господь с тобой,{'\n'}
-                  Он сохранить светильник твой.{'\n'}
+                  Он сохранить светильник твой.{'\n'}{'\n'}
               </Text>
         </ScrollView> 
 

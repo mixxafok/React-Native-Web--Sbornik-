@@ -9,7 +9,8 @@ export default function ZvezdDivnieAlmazi( isEnabled ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -65,7 +66,7 @@ export default function ZvezdDivnieAlmazi( isEnabled ) {
                   Пусть из страданий и счастье строится, {'\n'}
                   Лишь после смерти награда откроется.       {'\n'}                             
                   Чаша скорбей производит терпение, {'\n'}
-                  Вся наша жизнь на земле - лишь мгновение!{'\n'}
+                  Вся наша жизнь на земле - лишь мгновение!{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

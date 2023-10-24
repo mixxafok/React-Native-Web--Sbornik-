@@ -9,7 +9,8 @@ export default function SkoroDayTotPridet(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -53,7 +54,7 @@ export default function SkoroDayTotPridet(  ) {
                   Скоро день тот придет, и не будет всех забот, {'\n'}
                   Ни печали невзгод, Ни нужды, ни тревог. {'\n'}
                   Мир царит в стране святой, Тьмы не будет никакой. {'\n'}
-                  Что за день, радостный день Будет там!{'\n'}
+                  Что за день, радостный день Будет там!{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

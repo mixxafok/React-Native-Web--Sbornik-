@@ -10,7 +10,7 @@ export default function KtoJeYa(  ) {
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
   const [viewAccordes, setViewAccordes] = useState(true);
-  
+  window.scrollTo(0,0)
    return (
      <View style={styles.container}>
  
@@ -57,7 +57,7 @@ export default function KtoJeYa(  ) {
                   Кто же я, что Всевидящий Господь,  {'\n'}
                   Простив мои грехи, дарует мне любовь? {'\n'}
                   Кто же я, чтобы Бог, смиривший шторм, {'\n'}
-                  Дарил мне Свой покой, когда вокруг лишь зло?{'\n'}
+                  Дарил мне Свой покой, когда вокруг лишь зло?{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

@@ -10,6 +10,7 @@ export default function MilostiTvoey(  ) {
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'));
   const slide = JSON.parse(localStorage.getItem('SliderValues'));
   const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0)
 
 
    return (
@@ -41,7 +42,7 @@ export default function MilostiTvoey(  ) {
                   <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Em               F#{'\n'}</Text>
                   Освободил от вины. (2 раза){'\n'}
                   <Text id={viewAccordes ? null : 'AccordesNone'} style={isStyle ? styles.AccordesDark : styles.AccordesLight}>Hm       Em    F#{'\n'}</Text>
-                  Благодарю Тебя! (2 раза){'\n'}
+                  Благодарю Тебя! (2 раза){'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

@@ -9,7 +9,8 @@ export default function ZdeciNaZemle( isEnabled ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -53,7 +54,7 @@ export default function ZdeciNaZemle( isEnabled ) {
                   В дороге дальней, дорогие друзья, {'\n'}
                   Вы расскажите людям всем, {'\n'}
                   Как велика любовь Спасителя Христа, {'\n'}
-                  Что в небе Родина нас ждет.{'\n'}
+                  Что в небе Родина нас ждет.{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

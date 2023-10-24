@@ -9,7 +9,8 @@ export default function KydaBiYaIdtiHotel( ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
   
    return (
      <View style={styles.container}>
@@ -53,7 +54,7 @@ export default function KydaBiYaIdtiHotel( ) {
                   Господь, ведь вся вселенная{'\n'}
                   Есть дело Твоих рук, {'\n'}
                   Прославить я хочу Тебя, {'\n'}
-                  Мой Бог, как Ты велик.{'\n'}
+                  Мой Бог, как Ты велик.{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

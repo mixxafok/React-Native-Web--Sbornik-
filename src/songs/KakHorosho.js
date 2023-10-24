@@ -10,6 +10,7 @@ export default function KakHorosho(  ) {
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
   const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0)
   
    return (
      <View style={styles.container}>
@@ -43,7 +44,7 @@ export default function KakHorosho(  ) {
                   Путь наш суров, устаем временами. {'\n'}
                   Движемся мы по житейским волнам. {'\n'}
                   Скоро придет наш Спаситель за нами,  {'\n'}
-                  Будет конец нашим бедам, скорбям.{'\n'}
+                  Будет конец нашим бедам, скорбям.{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

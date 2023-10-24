@@ -9,7 +9,8 @@ export default function KraiChydeshu(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -60,7 +61,7 @@ export default function KraiChydeshu(  ) {
                   В край чудесный мы скоро прибудем{'\n'}
                   И увидим Того, Кто нам мил;{'\n'}
                   Там утихнет скорбящее сердце:{'\n'}
-                  Ведь там вечная радость и мир.{'\n'}
+                  Ведь там вечная радость и мир.{'\n'}{'\n'}
               </Text>
         </ScrollView> 
 

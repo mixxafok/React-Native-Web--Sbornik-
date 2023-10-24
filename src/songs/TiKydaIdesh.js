@@ -9,7 +9,8 @@ export default function TiKydaIdesh(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -70,7 +71,7 @@ export default function TiKydaIdesh(  ) {
                   // Недалеко уж родная{'\n'}
                   И желанная страна.{'\n'}
                   Вера чистая, живая{'\n'}
-                  Нас введет с тобой туда. // 2р.{'\n'}
+                  Нас введет с тобой туда. // 2р.{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

@@ -9,7 +9,8 @@ export default function PustYgasloNebo(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -49,7 +50,7 @@ export default function PustYgasloNebo(  ) {
                   <Text style={styles.Couplet} >Куплет 3: {'\n'}</Text>
                   Ты придёшь и навсегда yмолкнет грех. {'\n'}
                   Там, где темнота была,Сияет свет,{'\n'}
-                  Bечный свет{'\n'}
+                  Bечный свет{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

@@ -10,6 +10,7 @@ export default function NashaJizniThisGod() {
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
   const slide = JSON.parse(localStorage.getItem('SliderValues'));
   const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0)
 
    return (
      <View style={styles.container}>
@@ -49,7 +50,7 @@ export default function NashaJizniThisGod() {
                   И ни жизнь, и нии смерть, даже земные волненья,{'\n'}
                   И ничто Имя то не сотрёт,{'\n'}
                   ||:Оно Кровью святою записано в сердце,{'\n'}
-                  И оно там живёт, растёт, цветёт.:||{'\n'}
+                  И оно там живёт, растёт, цветёт.:||{'\n'}{'\n'}
               </Text>
         </ScrollView> 
 

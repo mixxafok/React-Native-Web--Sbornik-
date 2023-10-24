@@ -9,7 +9,8 @@ export default function NeymryINoBydy(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -52,7 +53,7 @@ export default function NeymryINoBydy(  ) {
                   Мой Господь - моя сила, спасение моё,{'\n'}
                   Отвори врата правды - и к Тебе я войду.{'\n'}
                   Гласом радости буду славить имя Твоё,{'\n'}
-                  Поспеши же ко мне - и Тебя я найду!{'\n'}
+                  Поспеши же ко мне - и Тебя я найду!{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

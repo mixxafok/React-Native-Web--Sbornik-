@@ -9,7 +9,8 @@ export default function TiMenyaNapolni(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -63,7 +64,7 @@ export default function TiMenyaNapolni(  ) {
                   Твоё Имя велико по всей земле,{'\n'}
                   Твоя слава не смолкает в вышине.{'\n'}
                   Пусть ещё одна душа вдруг увидит и поймёт,{'\n'}
-                  Что её Создатель в небесах живёт.{'\n'}
+                  Что её Создатель в небесах живёт.{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

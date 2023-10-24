@@ -9,7 +9,8 @@ export default function TamDaleko(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -53,7 +54,7 @@ export default function TamDaleko(  ) {
                   Там навсегда скорби забуду,{'\n'}
                   В небе Господь наш царит.{'\n'}
                   Там с Иисусом вечно я буду {'\n'}
-                  В сладком общении жить.{'\n'}
+                  В сладком общении жить.{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

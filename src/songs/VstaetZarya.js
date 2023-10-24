@@ -10,6 +10,7 @@ export default function VstaetZarya(  ) {
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
   const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0)
   
    return (
      <View style={styles.container}>
@@ -53,7 +54,7 @@ export default function VstaetZarya(  ) {
                   Великий Бог в любви Своей к нам, людям грешным,{'\n'}
                   Отдал в жертву Сына Своего,{'\n'}
                   И нас омыл Он Кровию Своей Пречистой,{'\n'}
-                  Будем вечно славить мы Его.{'\n'}
+                  Будем вечно славить мы Его.{'\n'}{'\n'}
               </Text>
         </ScrollView> 
 

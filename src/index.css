@@ -17,3 +17,7 @@ code {
   display: none;
 }
 
+.fsf{
+  z-index: 100;
+  background-color:rgb(178, 239, 219) ;
+}

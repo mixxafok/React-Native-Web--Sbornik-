@@ -10,6 +10,7 @@ export default function LybitJesusMenya(  ) {
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
   const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0)
   
    return (
      <View style={styles.container}>
@@ -53,7 +54,7 @@ export default function LybitJesusMenya(  ) {
                   Друг, подойди к Христу, сердце открой, {'\n'}
                   Руку подай свою в руку Его, {'\n'}
                   Вечную радость в Нем ты обретешь {'\n'}
-                  И песню новую тогда запоешь. {'\n'}
+                  И песню новую тогда запоешь. {'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

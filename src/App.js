@@ -50,65 +50,71 @@ import SkolkoEstiZamanchivih from "./songs/SkolkoEstiZamanchivih.js";
 import TiPrishelVEtotMir from "./songs/TiPrishelVEtotMir.js";
 import VdoliPoViaDolorossa from "./songs/VdoliPoViaDolorossa.js";
 import NashaJizniThisGod from './songs/NashaJizniThisGod';
+import NeperechestiNam from './songs/NeperechestiNam';
 
 export default function App() {
-  
+  useEffect( ()=>{
+    window.scrollTo(0, 0)
+  },[])
+
+  const [namSong, setNamSong] = useState();
+//console.log(namSong)
+
   return (
 
     <View >
-      
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<NameSongs />}  />
-          <Route path='/BlagoEsti' element={<BlagoEsti /> } />
-          <Route path='/VstaetZarya' element={<VstaetZarya />} />
-          <Route path='/VTebeGospod' element={<VTebeGospod />} />
-          <Route path='/VChristeOdnom' element={<VChristeOdnom />} />
-          <Route path='/VChasKogdaTryba' element={<VChasKogdaTryba /> } />
-          <Route path='/DerjitOnMenya' element={<DerjitOnMenya />} />
-          <Route path='/DoveryatTebe' element={<DoveryatTebe />} />
-          <Route path='/DolgMoyYplatil' element={<DolgMoyYplatil />} />
-          <Route path='/EstiNaNebeGorod' element={<EstiNaNebeGorod /> } />
-          <Route path='/ZaLoveZaMilost' element={<ZaLoveZaMilost />} />
-          <Route path='/ZvezdDivnieAlmazi' element={<ZvezdDivnieAlmazi />} />
-          <Route path='/ZdeciNaZemle' element={<ZdeciNaZemle />} />
-          <Route path='/KakPrekrasno' element={<KakPrekrasno /> } />
-          <Route path='/KakHorosho' element={<KakHorosho />} />
-          <Route path='/KtoJeYa' element={<KtoJeYa />} />
-          <Route path='/KtoMoraVse' element={<KtoMoraVse />} />
-          <Route path='/KydaBiYaIdtiHotel' element={<KydaBiYaIdtiHotel /> } />
-          <Route path='/LybitJesusMenya' element={<LybitJesusMenya />} />
-          <Route path='/LybitEtoZnachit' element={<LybitEtoZnachit />} />
-          <Route path='/LoveChtoNePomnit' element={<LoveChtoNePomnit />} />
-          <Route path='/MilostiTvoey' element={<MilostiTvoey /> } />
-          <Route path='/MoyaMolitva' element={<MoyaMolitva />} />
-          <Route path='/MiNygniDrygDrygy' element={<MiNygniDrygDrygy />} />
-          <Route path='/NaDalekomHolme' element={<NaDalekomHolme />} />
-          <Route path='/NadCerkovnimiKupolami' element={<NadCerkovnimiKupolami /> } />
-          <Route path='/NaychiMenya' element={<NaychiMenya />} />
-          <Route path='/NeymryINoBydy' element={<NeymryINoBydy />} />
-          <Route path='/OdnaListva' element={<OdnaListva />} />
-          <Route path='/OtPogibeliSpasla' element={<OtPogibeliSpasla /> } />
-          <Route path='/ProsipausNaZare' element={<ProsipausNaZare />} />
-          <Route path='/PustYgasloNebo' element={<PustYgasloNebo />} />
-          <Route path='PytKGolgofe' element={<PytKGolgofe /> } />
-          <Route path='SvetomSvoim' element={<SvetomSvoim />} />
-          <Route path='SkoroDayTotPridet' element={<SkoroDayTotPridet />} />
-          <Route path='SkrouMenya' element={<SkrouMenya />} />
-          <Route path='SonGodNamRojden' element={<SonGodNamRojden /> } />
-          <Route path='TamDaleko' element={<TamDaleko />} />
-          <Route path='TiIskupilMir' element={<TiIskupilMir />} />
-          <Route path='TiKydaIdeshOt' element={<TiKydaIdesh /> } />
-          <Route path='TiMenyaNapolni' element={<TiMenyaNapolni />} />
-          <Route path='TiNePechalsya' element={<TiNePechalsya />} />
-          <Route path='UnostSvetlya' element={<UnostSvetlya /> } />
-          <Route path='KraiChydeshu' element={<KraiChydeshu />} />
-          <Route path='HristianinNesiOgon' element={<HristianinNesiOgon />} />
-          <Route path='SkolkoEstiZamanchivih' element={<SkolkoEstiZamanchivih />} />
-          <Route path='TiPrishelVEtotMir' element={<TiPrishelVEtotMir /> } />
-          <Route path='VdoliPoViaDolorossa' element={<VdoliPoViaDolorossa />} />
-          <Route path='NashaJizniThisGod' element={<NashaJizniThisGod />} />
-
+          <Route path='/' element={<NameSongs setNamSong={setNamSong}/>}  />
+          <Route path='/BlagoEsti' element={<BlagoEsti namSong={namSong}/> } />
+          <Route path='/VstaetZarya' element={<VstaetZarya namSong={namSong}/>} />
+          <Route path='/VTebeGospod' element={<VTebeGospod namSong={namSong}/>} />
+          <Route path='/VChristeOdnom' element={<VChristeOdnom namSong={namSong}/>} />
+          <Route path='/VChasKogdaTryba' element={<VChasKogdaTryba namSong={namSong}/> } />
+          <Route path='/DerjitOnMenya' element={<DerjitOnMenya namSong={namSong}/>} />
+          <Route path='/DoveryatTebe' element={<DoveryatTebe namSong={namSong}/>} />
+          <Route path='/DolgMoyYplatil' element={<DolgMoyYplatil namSong={namSong}/>} />
+          <Route path='/EstiNaNebeGorod' element={<EstiNaNebeGorod namSong={namSong}/> } />
+          <Route path='/ZaLoveZaMilost' element={<ZaLoveZaMilost namSong={namSong}/>} />
+          <Route path='/ZvezdDivnieAlmazi' element={<ZvezdDivnieAlmazi namSong={namSong}/>} />
+          <Route path='/ZdeciNaZemle' element={<ZdeciNaZemle namSong={namSong}/>} />
+          <Route path='/KakPrekrasno' element={<KakPrekrasno namSong={namSong}/> } />
+          <Route path='/KakHorosho' element={<KakHorosho namSong={namSong}/>} />
+          <Route path='/KtoJeYa' element={<KtoJeYa namSong={namSong}/>} />
+          <Route path='/KtoMoraVse' element={<KtoMoraVse namSong={namSong}/>} />
+          <Route path='/KydaBiYaIdtiHotel' element={<KydaBiYaIdtiHotel namSong={namSong}/> } />
+          <Route path='/LybitJesusMenya' element={<LybitJesusMenya namSong={namSong}/>} />
+          <Route path='/LybitEtoZnachit' element={<LybitEtoZnachit namSong={namSong}/>} />
+          <Route path='/LoveChtoNePomnit' element={<LoveChtoNePomnit namSong={namSong}/>} />
+          <Route path='/MilostiTvoey' element={<MilostiTvoey namSong={namSong}/> } />
+          <Route path='/MoyaMolitva' element={<MoyaMolitva namSong={namSong}/>} />
+          <Route path='/MiNygniDrygDrygy' element={<MiNygniDrygDrygy namSong={namSong}/>} />
+          <Route path='/NaDalekomHolme' element={<NaDalekomHolme namSong={namSong}/>} />
+          <Route path='/NadCerkovnimiKupolami' element={<NadCerkovnimiKupolami namSong={namSong}/> } />
+          <Route path='/NaychiMenya' element={<NaychiMenya namSong={namSong}/>} />
+          <Route path='/NeymryINoBydy' element={<NeymryINoBydy namSong={namSong}/>} />
+          <Route path='/OdnaListva' element={<OdnaListva namSong={namSong}/>} />
+          <Route path='/OtPogibeliSpasla' element={<OtPogibeliSpasla namSong={namSong}/> } />
+          <Route path='/ProsipausNaZare' element={<ProsipausNaZare namSong={namSong}/>} />
+          <Route path='/PustYgasloNebo' element={<PustYgasloNebo namSong={namSong}/>} />
+          <Route path='/PytKGolgofe' element={<PytKGolgofe namSong={namSong}/> } />
+          <Route path='/SvetomSvoim' element={<SvetomSvoim namSong={namSong}/>} />
+          <Route path='/SkoroDayTotPridet' element={<SkoroDayTotPridet namSong={namSong}/>} />
+          <Route path='/SkrouMenya' element={<SkrouMenya namSong={namSong}/>} />
+          <Route path='/SonGodNamRojden' element={<SonGodNamRojden namSong={namSong}/> } />
+          <Route path='/TamDaleko' element={<TamDaleko namSong={namSong}/>} />
+          <Route path='/TiIskupilMir' element={<TiIskupilMir namSong={namSong}/>} />
+          <Route path='/TiKydaIdesh' element={<TiKydaIdesh namSong={namSong}/> } />
+          <Route path='/TiMenyaNapolni' element={<TiMenyaNapolni namSong={namSong}/>} />
+          <Route path='/TiNePechalsya' element={<TiNePechalsya namSong={namSong}/>} />
+          <Route path='/UnostSvetlya' element={<UnostSvetlya namSong={namSong}/> } />
+          <Route path='/KraiChydeshu' element={<KraiChydeshu namSong={namSong}/>} />
+          <Route path='/HristianinNesiOgon' element={<HristianinNesiOgon namSong={namSong}/>} />
+          <Route path='/SkolkoEstiZamanchivih' element={<SkolkoEstiZamanchivih namSong={namSong}/>} />
+          <Route path='/TiPrishelVEtotMir' element={<TiPrishelVEtotMir namSong={namSong}/> } />
+          <Route path='/VdoliPoViaDolorossa' element={<VdoliPoViaDolorossa namSong={namSong}/>} />
+          <Route path='/NashaJizniThisGod' element={<NashaJizniThisGod namSong={namSong}/>} />
+          <Route path='/NeperechestiNam' element={<NeperechestiNam namSong={namSong}/>} />
         </Routes>
       </BrowserRouter>
       {/* <Stack /> */}

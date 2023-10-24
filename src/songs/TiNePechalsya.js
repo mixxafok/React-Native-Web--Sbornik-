@@ -9,7 +9,8 @@ export default function TiNePechalsya(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -53,7 +54,7 @@ export default function TiNePechalsya(  ) {
                   И не жалея о прошлом ничуть,{'\n'}
                   Вижу как катится мир к катастрофе.{'\n'}
                   Верую в крестный мной избранный путь,{'\n'}
-                  В тайну распятой любви на Голгофе.{'\n'}
+                  В тайну распятой любви на Голгофе.{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 

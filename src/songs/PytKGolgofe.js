@@ -9,7 +9,8 @@ export default function PytKGolgofe(  ) {
   const navigateTo = useNavigate();
   const isStyle = JSON.parse(localStorage.getItem('isssEnabled'))
     const slide = JSON.parse(localStorage.getItem('SliderValues'));
-  const [viewAccordes, setViewAccordes] = useState(true); 
+  const [viewAccordes, setViewAccordes] = useState(true);
+  window.scrollTo(0,0) 
 
    return (
      <View style={styles.container}>
@@ -59,7 +60,7 @@ export default function PytKGolgofe(  ) {
                   Дай, Господь, мне понять тайну вечной любви,{'\n'}
                   Той, что Ты нам на землю принес.{'\n'}
                   И тогда я спокойно и твердо пойду{'\n'}
-                  По земле среди бурь, среди гроз.{'\n'}
+                  По земле среди бурь, среди гроз.{'\n'}{'\n'}
 
               </Text>
         </ScrollView> 
