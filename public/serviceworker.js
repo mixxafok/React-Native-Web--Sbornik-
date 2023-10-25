@@ -12,6 +12,7 @@ const urlToCache = [
   '/static/js/main.b802a956.js.map',
   '/static/css/main.739cc27e.css.map',
   '/static/css/main.739cc27e.css',
+  '/NameSongs',
   '/BlagoEsti'
   ];
 

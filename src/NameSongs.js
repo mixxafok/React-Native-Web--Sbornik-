@@ -18,8 +18,6 @@ const [storage, setStorage] = useState({
   switchValue: AsyncStorage.getItem('isssEnabled') 
 })
 
-
-
   // const [sliderValue, setSliderValue] = useState(AsyncStorage.getItem('storage').slider);
   const [ modalOpen , setModalOpen ] = useState (false);
   // const [isEnabled, setIsEnabled] = useState(AsyncStorage.getItem('storage').switch );
